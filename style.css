@@ -1,0 +1,97 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.text-center {
+  text-align: center
+}
+
+li {
+  list-style-type: none;
+}
+
+.field {
+  margin: 3em;
+}
+button {
+  padding: .5em;
+  font-size: 35px;
+}
+.btn-group {
+  display: flex;
+  justify-content: center;
+}
+.btn-group button + button {
+  margin-left: 1em
+}
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.harbor {
+  margin-right: 2em;
+  width: 100px;
+  display: flex;
+}
+
+.grid, .enemy_ships {
+  background: #00c2ffab;
+  width: 420px;
+  height: 420px;
+}
+
+.grid li, .ships, .enemy_ships li { width: 40px; height: 40px; float: left}
+
+.cell {
+  border: 1px solid white
+}
+.cell.over{
+  border: 1px dotted grey;
+}
+
+.cell.over:hover * {
+  cursor: none;
+}
+
+.enemy {
+  margin-left: 2em;
+}
+
+.person {
+  display: flex;
+}
+
+.hit {
+  background-color: red;
+}
+
+
+.slip {
+  position: relative;
+}
+
+.slip::before {
+  content: '.';
+  height: auto;
+  font-size: 35px;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(100%, -30%);
+}
+
+.grid.false {
+  border: 1px solid red;
+}
