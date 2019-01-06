@@ -35,3 +35,12 @@ function array_fill_random(limit, min, max)
 	
 	return arr;
 }
+
+// найти совпадения в массиве
+function array_matches( array, s ) {
+  for( var i = 0; i < array.length; ++i )
+	if(array[i] === s) {
+		return i;
+	}
+  return -1;
+}
