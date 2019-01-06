@@ -42,5 +42,4 @@
     col.addEventListener('click', shots, false);
   });
 
-  
 })(StartGame.map())
