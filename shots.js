@@ -8,7 +8,6 @@
   const volley = (elem, className) => {
     elem.classList.add(className);
     setTimeout(() => {
-      console.log('test')
     }, 500);
   }
 
@@ -21,5 +20,4 @@
     col.addEventListener('click', shots, false);
   });
 
-  
 })()
