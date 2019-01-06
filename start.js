@@ -21,24 +21,34 @@ const StartGame = (()=>{
       MAP = [];
       grid.classList.add('false');
     } else {
-      const cell = getSelectorAll('.cell', person);
-      if(grid.classList.contains('false')) {
-        grid.classList.remove('false');
-      }
+        const cell = getSelectorAll('.cell', person);
+        if(grid.classList.contains('false')) {
+          grid.classList.remove('false');
+        }
+  
+        cell.forEach(elem => {
+          elem.removeAttribute('ondrop')
+          elem.removeAttribute('ondragover')
 
-      cell.forEach((elem, i)=>{
-        elem.removeAttribute('ondrop')
-        elem.removeAttribute('ondragover')
-        if(elem.classList.contains('their')) {
-          elem.classList.remove('their');
-        } 
-      })
+          const Child = elem.firstChild
 
-      run.setAttribute('disabled', '');
+          if(!!Child) {
+            Child.setAttribute('draggable', 'false')
+            Child.removeAttribute('ondragstart')
+          }
+        })
+  
+        run.setAttribute('disabled', '');
+
+        getSelector('.harbor').style.display = 'none';
     }
   }
 
   run.addEventListener('click', getMap, false);
+
+  return {
+    map: () => MAP
+  }
 
 
 })();
