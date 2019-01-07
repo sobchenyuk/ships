@@ -7,7 +7,7 @@ const getSelectorAll = (selector_all, parent = false) => parent ? parent.querySe
 function rand(min, max)
 {
 	max = max || false;
-  min = min || 255;
+  min = min || 0;
   
 	if (max)
 	{
@@ -30,8 +30,16 @@ function array_fill_random(limit, min, max)
 	
 	for (var i=0; i<limit; i++)
 	{
-		arr[i] = rand(min, max);
+		let num = rand(min, max);
+		arr[i] = num;
 	}
+
+	arr.forEach((elem, i, arr)=>{
+		if(elem === arr[i+1] ) {
+			arr = [];
+			array_fill_random(limit, min, max)
+		}
+	})
 	
 	return arr;
 }
